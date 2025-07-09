@@ -1,6 +1,7 @@
 import * as vscode from 'vscode';
 import { getDebugConsole } from '../../core/debugConsole';
 import { reportError } from '../../core/diagnostics';
+import { getBridge, type Message } from '../../core/runtime/bridge';
 
 /**
  * File metadata information
@@ -65,10 +66,49 @@ export class FileOperationsHost {
   }
 
   /**
-   * Set up event handlers for the file operations host
+   * Set up bridge message handlers for file operations
    */
   private setupEventHandlers(): void {
-    getDebugConsole().logError('File operations host initialized');
+    const bridge = getBridge();
+
+    // Handle read-file requests from webview
+    bridge.onMessage('read-file', async (message: Message) => {
+      try {
+        const { filePath, options } = message.payload as { filePath: string; options?: FileOperationOptions };
+        const result = await this.readFile(filePath, options);
+        await bridge.sendResponse(message, result);
+      } catch (error) {
+        await bridge.sendResponse(message, undefined, error instanceof Error ? error.message : String(error));
+      }
+    });
+
+    // Handle write-file requests from webview
+    bridge.onMessage('write-file', async (message: Message) => {
+      try {
+        const { filePath, content, options } = message.payload as { 
+          filePath: string; 
+          content: string; 
+          options?: FileOperationOptions 
+        };
+        const result = await this.writeFile(filePath, content, options);
+        await bridge.sendResponse(message, result);
+      } catch (error) {
+        await bridge.sendResponse(message, undefined, error instanceof Error ? error.message : String(error));
+      }
+    });
+
+    // Handle get-file-info requests from webview
+    bridge.onMessage('get-file-info', async (message: Message) => {
+      try {
+        const { filePath } = message.payload as { filePath: string };
+        const result = await this.getFileInfo(filePath);
+        await bridge.sendResponse(message, result);
+      } catch (error) {
+        await bridge.sendResponse(message, undefined, error instanceof Error ? error.message : String(error));
+      }
+    });
+
+    getDebugConsole().logError('File operations host initialized with bridge handlers');
   }
 
   /**

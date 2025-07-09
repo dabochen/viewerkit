@@ -43,7 +43,7 @@ viewerkit-sdk/
    │   ├─ hotReload/           # File watching (Feature ①)
    │   ├─ autosave/            # Debounced write-back (Feature ②)
    │   ├─ themeSync/           # Theme synchronization (Feature ⑤)
-   │   ├─ parsers/             # YAML / Markdown (Feature ⑥)
+   │   ├─ fileOps/             # Universal file operations (Feature ⑥)
    │   └─ new features/        # Each new features gets added into a new folder under /features
    │
    ├─ hooks/                   # React-friendly wrappers
@@ -103,7 +103,7 @@ viewerkit-sdk/
 
 ### 6 · Universal File Operations
 - **Goal**: Universal file I/O operations without format assumptions.  
-- **Implementation**: Folder: `features/fileOps/` (replaces `parsers/`).  
+- **Implementation**: Folder: `features/fileOps/`.  
 - **Core Functions**:
   - `readFile(path)` → string content + metadata
   - `writeFile(path, content)` → success/error with stats  

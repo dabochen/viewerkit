@@ -250,12 +250,46 @@ Rather than imposing specific parsing formats, this system provides universal fi
   - ✅ Updated documentation to reflect universal philosophy
   - ✅ Zero dependency lock-in - users choose parsing libraries
   - ✅ All linting errors resolved
+- ✅ **Architectural Consistency Refactor (Completed)**:
+  - ✅ Refactor autosave to use universal fileOps instead of direct VS Code APIs
+  - ✅ Refactor hotReload to use universal fileOps for file reading operations
+  - ✅ Update React hooks to leverage universal fileOps integration
+  - ✅ Create comprehensive test scripts for architectural validation
 - ✅ **Test Suite Results**: All tests passing (3/3)
   - Feature Module Tests: ✅ PASS
   - Integration Tests: ✅ PASS
   - Universal File Operations: ✅ PASS (8/8 tests)
   - Full PRD compliance validated
   - Production-ready architecture confirmed
+
+---
+
+### Step 3.5: Architectural Consistency Refactor 🔄
+**Goal**: Ensure ViewerKit's own features use the universal fileOps APIs for consistency.
+
+**Problem Identified**: 
+After implementing universal fileOps, we discovered that autosave and hotReload features were still using direct VS Code APIs (`vscode.workspace.fs.*`) instead of the universal fileOps layer. This creates architectural inconsistency where ViewerKit's own features don't follow the universal principles they promote.
+
+**Implementation Strategy**:
+1. **Autosave Refactor**: Replace direct `vscode.workspace.fs.writeFile` calls with `fileOps.writeFile`
+2. **HotReload Refactor**: Replace direct file reading with `fileOps.readFile` for content requests
+3. **Hook Integration**: Ensure React hooks leverage the universal APIs through the refactored features
+4. **Performance Validation**: Verify that the extra layer doesn't significantly impact performance
+5. **Testing**: Create comprehensive tests to validate architectural consistency
+
+**Benefits**:
+- Architectural consistency across all ViewerKit features
+- Universal metadata extraction for all file operations
+- Consistent error handling and validation
+- Future-proof design for cross-platform support
+- Demonstrates best practices to SDK users
+
+**Deliverables**:
+- ✅ Refactored autosave implementation using fileOps
+- ✅ Refactored hotReload file reading using fileOps
+- ✅ Updated React hooks integration
+- ✅ Comprehensive test suite for architectural validation
+- ✅ Performance benchmarks comparing old vs new implementations
 
 ---
 

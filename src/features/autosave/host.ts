@@ -2,6 +2,7 @@ import * as vscode from 'vscode';
 import { flagInternalWrite } from '../hotReload/host';
 import { getDebugConsole } from '../../core/debugConsole';
 import { reportError, reportDiagnostics } from '../../core/diagnostics';
+import { writeFile as fileOpsWriteFile, readFile as fileOpsReadFile } from '../fileOps/host';
 
 /**
  * Autosave options
@@ -146,26 +147,28 @@ export class AutosaveManager {
           flagInternalWrite(path);
         }
 
-        // Write content to file
-        const encoder = new TextEncoder();
-        const data = encoder.encode(content);
-        await vscode.workspace.fs.writeFile(uri, data);
+        // Write content to file using universal fileOps
+        const writeResult = await fileOpsWriteFile(path, content);
+        
+        if (!writeResult.success) {
+          throw new Error(writeResult.error || 'FileOps write failed');
+        }
 
         const result: AutosaveResult = {
           success: true,
-          bytesWritten: data.length,
+          bytesWritten: writeResult.data || 0,
           timestamp: Date.now(),
         };
 
-        getDebugConsole().logError(`Autosave completed: ${path} (${data.length} bytes)`);
+        getDebugConsole().logError(`Autosave completed: ${path} (${writeResult.data} bytes)`);
 
-        // Report successful save to diagnostics
+        // Report successful save to diagnostics using fileOps metadata
         reportDiagnostics(uri, {
-          fileSize: data.length,
-          lastModified: Date.now(),
-          characterCount: content.length,
-          lineCount: content.split('\n').length,
-          wordCount: content.split(/\s+/).filter(word => word.length > 0).length,
+          fileSize: writeResult.metadata.size,
+          lastModified: writeResult.metadata.lastModified,
+          characterCount: writeResult.metadata.characters,
+          lineCount: writeResult.metadata.lines,
+          wordCount: writeResult.metadata.words,
         });
 
         return result;
@@ -195,22 +198,28 @@ export class AutosaveManager {
   }
 
   /**
-   * Create a backup of the existing file
+   * Create a backup of the existing file using universal fileOps
    */
   private async createBackup(uri: vscode.Uri): Promise<void> {
     try {
       const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
       const backupPath = `${uri.fsPath}.backup-${timestamp}`;
-      const backupUri = vscode.Uri.file(backupPath);
 
-      // Check if original file exists
-      try {
-        await vscode.workspace.fs.stat(uri);
-        // File exists, create backup
-        await vscode.workspace.fs.copy(uri, backupUri);
-        getDebugConsole().logError(`Backup created: ${backupPath}`);
-      } catch {
-        // Original file doesn't exist, no backup needed
+      // Check if original file exists and read its content
+      const readResult = await fileOpsReadFile(uri.fsPath);
+      
+      if (readResult.success && readResult.data) {
+        // File exists, create backup using fileOps
+        const backupResult = await fileOpsWriteFile(backupPath, readResult.data);
+        
+        if (backupResult.success) {
+          getDebugConsole().logError(`Backup created: ${backupPath} (${backupResult.data} bytes)`);
+        } else {
+          getDebugConsole().logError(new Error(`Backup creation failed: ${backupResult.error}`), 'createBackup');
+        }
+      } else {
+        // Original file doesn't exist or can't be read, no backup needed
+        getDebugConsole().logError(`No backup needed for: ${uri.fsPath} (file doesn't exist)`);
       }
     } catch (error) {
       getDebugConsole().logError(

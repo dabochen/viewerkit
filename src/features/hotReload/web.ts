@@ -200,13 +200,20 @@ export function setupFileWatcher(
 }
 
 /**
- * Request file content from host (helper for setupFileWatcher)
+ * Request file content from host using universal fileOps (helper for setupFileWatcher)
  */
 export async function requestFileContent(path: string): Promise<string> {
   try {
-    const bridge = getBridge();
-    const content = await bridge.sendRequest<string>('read-file', { path });
-    return content || '';
+    // Use the universal fileOps readFile instead of custom read-file handler
+    const { readFile } = await import('../fileOps/web');
+    const result = await readFile(path);
+    
+    if (result.success && result.data) {
+      return result.data;
+    } else {
+      getDebugConsole().logError(new Error(`Failed to read file: ${result.error || 'Unknown error'}`), 'requestFileContent');
+      return '';
+    }
   } catch (error) {
     getDebugConsole().logError(
       error instanceof Error ? error : new Error(String(error)),
