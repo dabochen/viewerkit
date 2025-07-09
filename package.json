@@ -1,0 +1,48 @@
+{
+  "name": "viewerkit",
+  "version": "0.1.0",
+  "description": "SDK for building VS Code/Cursor extensions with minimal setup",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "engines": {
+    "node": ">=18",
+    "vscode": "^1.85.0"
+  },
+  "packageManager": "pnpm@8",
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint src --ext .ts,.tsx",
+    "lint:fix": "eslint src --ext .ts,.tsx --fix"
+  },
+  "keywords": [
+    "vscode",
+    "cursor",
+    "extension",
+    "webview",
+    "sdk"
+  ],
+  "author": "ViewerKit Team",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^24.0.12",
+    "@types/react": "^18.3.23",
+    "@types/react-dom": "^18.3.7",
+    "@types/vscode": "^1.85.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "eslint": "^8.0.0",
+    "eslint-config-airbnb-typescript": "^17.0.0",
+    "tsup": "^8.0.0",
+    "typescript": "^5.0.0"
+  },
+  "peerDependencies": {
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  },
+  "files": [
+    "dist"
+  ]
+}
