@@ -17,7 +17,8 @@
     "typecheck": "tsc --noEmit",
     "lint": "eslint src --ext .ts,.tsx",
     "lint:fix": "eslint src --ext .ts,.tsx --fix",
-    "prepublishOnly": "pnpm run build"
+    "prepublishOnly": "pnpm run build",
+    "docs": "typedoc"
   },
   "keywords": [
     "vscode",
@@ -48,6 +49,7 @@
     "eslint": "^8.0.0",
     "eslint-config-airbnb-typescript": "^17.0.0",
     "tsup": "^8.0.0",
+    "typedoc": "^0.28.7",
     "typescript": "^5.0.0"
   },
   "peerDependencies": {

@@ -113,5 +113,6 @@ yarn.lock
 *.old
 
 # Documentation build
+docs/
 docs/build/
 docs/.docusaurus/

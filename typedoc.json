@@ -1,0 +1,13 @@
+{
+  "entryPoints": ["src/index.ts"],
+  "entryPointStrategy": "expand",
+  "out": "docs",
+  "includeVersion": true,
+  "theme": "default",
+  "name": "ViewerKit SDK",
+  "readme": "none",
+  "hideGenerator": true,
+  "sort": ["source-order"],
+  "categorizeByGroup": false,
+  "defaultCategory": "API Reference"
+} 
