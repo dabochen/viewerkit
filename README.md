@@ -1,16 +1,16 @@
 # ViewerKit SDK
 
-A powerful TypeScript SDK for building VS Code and Cursor extensions with minimal setup. ViewerKit provides a unified API for file operations, hot reload, autosave, theming, and React integration.
+ViewerKit is a robust SDK crafted to enable developers to build extensions for VS Code and Cursor, transforming AI IDEs into versatile AI agents beyond coding. By providing a unified API, it allows developers to seamlessly integrate custom viewing and editing experiences into their extensions without dealing with complex backend tasks, enabling them to focus on frontend or user facing features. Optimized for vibe coding, ViewerKit empowers you to create tailored data visualization agents, content creation workspaces, i18n management toolkits, and much more.
 
 ## 🚀 Features
 
-- **Universal File Operations**: Cross-platform file API that works in VS Code, Cursor, and web environments
+- **Universal File Operations**: Cross-platform file API that works in VS Code, Cursor, Windsurf and Trae.
 - **Hot Reload**: Automatic file watching with 100ms debounce and conflict resolution
-- **Smart Autosave**: Intelligent autosave with backup creation and metadata extraction
-- **Theme Integration**: Seamless VS Code theme synchronization using CSS variables
+- **Smart Autosave**: Intelligent autosave that is designed to work with hot reload
 - **React Hooks**: Pre-built hooks for file watching, autosave, and state management
-- **UI Components**: Ready-to-use React components with theme adaptation
 - **TypeScript First**: Full type safety with comprehensive .d.ts files
+- **Theme Integration**: Seamless VS Code theme synchronization using CSS variables
+- **Templates**: Use templates on top of the sdk to build your extension in a few prompts
 
 ## 📦 Installation
 
@@ -20,7 +20,7 @@ npm install viewerkit
 
 **Requirements:**
 - Node.js ≥18
-- VS Code ≥1.85.0 (includes Cursor)
+- VS Code ≥1.85.0 (includes Cursor, Windsurf and Trae)
 - React ≥18 (for React features)
 
 ## 🎯 Quick Start
@@ -37,29 +37,48 @@ if (result.success) {
   console.log(`Lines: ${result.metadata.lines}, Words: ${result.metadata.words}`);
 }
 
-// Write a file
-await Features.fileOps.writeFile('output.txt', 'Hello ViewerKit!');
+// Write a file with metadata
+const result = await Features.writeFile('output.txt', 'Hello ViewerKit!');
+console.log(`Wrote ${result.data} bytes`);
 ```
 
 ### React Integration
 
-```typescript
-import { Hooks } from 'viewerkit';
+```tsx
+import { Hooks, UI } from 'viewerkit';
 
-function MyComponent() {
-  // Watch a file for changes
-  const fileData = Hooks.useWatchedFile('config.json');
+function MyEditor() {
+  // Watch a file for changes (includes content, error state, and auto-reload)
+  const fileData = Hooks.useWatchedFile('/path/to/config.json');
   
-  // Auto-save with conflict resolution
-  const { save, isSaving } = Hooks.useAutosave('draft.md');
+  // Auto-save with 400ms debounce and conflict resolution
+  const saveFunction = Hooks.useAutosave('/path/to/draft.md', 400);
+  
+  // Get current VS Code theme with CSS variables
+  const { theme, cssVariables, isDark } = Hooks.useTheme();
   
   return (
-    <div>
-      <p>File status: {fileData.isLoading ? 'Loading...' : 'Ready'}</p>
-      <button onClick={() => save('New content')} disabled={isSaving}>
-        Save
-      </button>
-    </div>
+    <UI.BasePanel title="My Editor" subtitle="Edit your configuration">
+      <p>File: {fileData.data || 'Loading...'}</p>
+      <p>Theme: {isDark ? 'Dark' : 'Light'}</p>
+      
+      <textarea 
+        value={fileData.data || ''}
+        onChange={(e) => saveFunction(e.target.value)}
+        style={{ 
+          backgroundColor: cssVariables?.['--vk-bg-primary'],
+          color: cssVariables?.['--vk-text-primary']
+        }}
+      />
+      
+      <UI.Button 
+        variant="primary" 
+        icon="save"
+        onClick={() => saveFunction(fileData.data || '')}
+      >
+        Force Save
+      </UI.Button>
+    </UI.BasePanel>
   );
 }
 ```
@@ -67,20 +86,22 @@ function MyComponent() {
 ### Extension Development
 
 ```typescript
-import { createExtension, Features } from 'viewerkit';
-
-// Create a new extension
-const extension = createExtension({
-  name: 'my-extension',
-  features: [
-    Features.autosave(),
-    Features.hotReload(),
-    Features.fileOps()
-  ]
-});
+import { registerEditor, Features } from 'viewerkit';
+import * as vscode from 'vscode';
 
 export function activate(context: vscode.ExtensionContext) {
-  extension.activate(context);
+  // Register a webview panel with ViewerKit
+  const panel = registerEditor(context, {
+    viewType: 'myExtension.editor',
+    title: 'My Custom Editor',
+    htmlContent: `<!DOCTYPE html>...`,
+    enableScripts: true,
+    retainContextWhenHidden: true
+  });
+
+  // Use features directly
+  Features.watchFile('/path/to/watch', { debounceMs: 100 });
+  Features.hostAutosave('/path/to/file.txt', 'content');
 }
 ```
 
@@ -91,7 +112,7 @@ ViewerKit follows a clean architectural pattern:
 - **Core**: Stable foundation (runtime, bridge, registry)
 - **Features**: Backend services (autosave, hotReload, fileOps)
 - **Hooks**: React wrappers for all functionality
-- **UI**: Pre-built React components
+- **UI**: Pre-built React components with our templates
 
 ## 📚 API Reference
 
@@ -104,12 +125,16 @@ ViewerKit follows a clean architectural pattern:
 
 ### Key Features
 
-| Feature | Description | React Hook |
-|---------|-------------|------------|
-| `fileOps` | Universal file operations | `useFileOps` |
-| `autosave` | Smart autosave with backups | `useAutosave` |
-| `hotReload` | File watching and hot reload | `useWatchedFile` |
-| `theme` | VS Code theme integration | `useTheme` |
+| Feature | Description | React Hook | Default Settings |
+|---------|-------------|------------|------------------|
+| **File Operations** | Universal file I/O with metadata | `useFileOperations` | Format-agnostic |
+| **Hot Reload** | File watching with loop prevention | `useWatchedFile` | 100ms debounce |
+| **Autosave** | Smart saving with backup creation | `useAutosave` | 400ms debounce |
+| **Theme Sync** | Live CSS variable injection | `useTheme` | Auto CSS variables |
+| **Bridge System** | Host-webview communication | `useBridge` | Promise-based |
+| **State Persistence** | Cross-session state management | Built into `BasePanel` | Auto save/restore |
+| **Diagnostics** | VS Code Problems panel integration | Built-in | Error/warning/info |
+| **UI Components** | Theme-aware React components | Direct imports | `BasePanel`, `Button`, `Toolbar` |
 
 ## 🔧 Development
 
@@ -127,19 +152,6 @@ pnpm run typecheck
 pnpm run lint
 ```
 
-## 📖 Documentation
-
-- [API Documentation](https://viewerkit.dev/docs) (Generated with TypeDoc)
-- [Getting Started Guide](https://viewerkit.dev/guide)
-- [Examples Repository](https://github.com/viewerkit/examples)
-
-## 🛠️ CLI Tool
-
-Scaffold new projects with the ViewerKit CLI:
-
-```bash
-npx create-viewerkit-project my-extension
-```
 
 ## 🤝 Contributing
 
