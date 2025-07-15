@@ -7,7 +7,7 @@ This file is used by AI tools like Cursor to guide the final release of the View
 ## ✅ 1. Setup SDK for NPM
 
 - Ensure `packages/viewerkit-sdk/package.json` exists and has:
-  - `"name": "@viewerkit/sdk"`
+  - `"name": "viewerkit"`
   - `"version": "1.0.0"`
   - `"main": "dist/index.js"`
   - `"types": "dist/index.d.ts"`
@@ -53,15 +53,19 @@ export function createSlide(title: string): string { ... }
 
 ---
 
-## ✅ 4. Create CLI Tool to Scaffold Template
+## ✅ 4. Create CLI Tool to Scaffold Templates
 
-- Create `cli/` folder with a file `cli/index.ts`
-- Use `commander` or `prompts` to ask for:
-  - Project name
-  - License key (optional)
-- Validate license with a mock API (for now)
-- Copy a template from `templates/slide-builder/` into the target folder
-- Install SDK via `npm install @viewerkit/sdk` inside the new project
+> ⚠️ **Important:** Do not build the CLI inside the SDK project folder. The CLI tool is a separate project.
+
+- Manually create a new folder at the root of your monorepo, e.g. `viewerkit-cli/`
+- This folder will serve as a standalone CLI package that uses `viewerkit` as a dependency
+- Inside the CLI project, install the SDK:
+  ```bash
+  npm install viewerkit
+  ```
+- The CLI will include multiple templates inside its own `templates/` folder (e.g. `slide-builder`, `dashboard`)
+- Each template is a ready-to-develop project and should install the SDK from NPM
+- See the CLI development guide for more details
 
 ---
 
@@ -89,24 +93,54 @@ export function createSlide(title: string): string { ... }
 
 ## ✅ 6. Publish the SDK
 
-- Log in to NPM: `npm login`
-- Run: `npm publish --access public` inside `packages/viewerkit-sdk/`
-- Verify: `npm install @viewerkit/sdk` works in a new project
+- Log in to NPM:
+  ```bash
+  npm login
+  ```
+- Navigate to the SDK root folder:
+  ```bash
+  cd packages/viewerkit-sdk
+  ```
+- Publish:
+  ```bash
+  npm publish --access public
+  ```
+- Verify:
+  ```bash
+  npm install viewerkit
+  ```
+  works in a brand-new empty project
 
 ---
 
 ## ✅ 7. Optional: Deploy Docs
 
-- Optionally deploy `docs/` folder (from Typedoc) to:
-  - GitHub Pages
+- Optionally deploy the generated `docs/` folder from Typedoc to:
+  - GitHub Pages (via `gh-pages`)
   - Vercel or Netlify
-- Link it from your SDK README
+- Link the hosted docs from your SDK `README.md` for discoverability
 
 ---
 
 ## ✅ 8. Final Developer Experience Checklist
 
-- Confirm `npm install @viewerkit/sdk` works
-- Confirm AI (Cursor, Copilot) shows autocomplete + function docs
-- Confirm README has full install + usage guide
-- Confirm CLI works and creates a new project
+- [ ] `npm install viewerkit` works in any new project
+- [ ] All exported functions have JSDoc comments
+- [ ] `dist/index.d.ts` exists and works with autocomplete
+- [ ] `README.md` has install and usage guide
+- [ ] SDK is compatible with CLI-created templates
+- [ ] CLI templates are correctly using the SDK from NPM
+- [ ] Cursor and other AI tools pick up SDK types and docs properly
+
+```ts
+// Example usage inside template
+import { createSlide } from 'viewerkit'
+```
+
+---
+```bash
+# SDK publishing flow
+npm run build
+npm run docs
+npm publish --access public
+```

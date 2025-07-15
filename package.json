@@ -1,10 +1,11 @@
 {
   "name": "viewerkit",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "SDK for building VS Code/Cursor extensions with minimal setup",
   "main": "dist/index.cjs",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
+  "sideEffects": false,
   "engines": {
     "node": ">=18",
     "vscode": "^1.85.0"
@@ -15,17 +16,28 @@
     "dev": "tsup --watch",
     "typecheck": "tsc --noEmit",
     "lint": "eslint src --ext .ts,.tsx",
-    "lint:fix": "eslint src --ext .ts,.tsx --fix"
+    "lint:fix": "eslint src --ext .ts,.tsx --fix",
+    "prepublishOnly": "pnpm run build"
   },
   "keywords": [
     "vscode",
     "cursor",
     "extension",
     "webview",
-    "sdk"
+    "sdk",
+    "typescript",
+    "react"
   ],
   "author": "ViewerKit Team",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dabochen/viewerkit.git"
+  },
+  "homepage": "https://github.com/dabochen/viewerkit#readme",
+  "bugs": {
+    "url": "https://github.com/dabochen/viewerkit/issues"
+  },
   "devDependencies": {
     "@types/node": "^24.0.12",
     "@types/react": "^18.3.23",
@@ -43,6 +55,8 @@
     "react-dom": "^18.0.0"
   },
   "files": [
-    "dist"
+    "dist",
+    "README.md",
+    "LICENSE"
   ]
 }
