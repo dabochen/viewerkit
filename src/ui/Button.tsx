@@ -436,7 +436,7 @@ export function ButtonGroup({
 
   // Clone children to apply group properties
   const processedChildren = React.Children.map(children, (child, index) => {
-    if (React.isValidElement(child) && child.type === Button) {
+    if (React.isValidElement<ButtonProps>(child) && child.type === Button) {
       const isFirst = index === 0;
       const isLast = index === React.Children.count(children) - 1;
       

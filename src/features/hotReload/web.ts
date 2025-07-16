@@ -123,15 +123,29 @@ export class HotReloadWebManager {
    * Check if a file path matches a pattern
    */
   private matchesPattern(filePath: string, pattern: string): boolean {
-    // Convert glob pattern to regex
-    const regexPattern = pattern
-      .replace(/\*\*/g, '.*')     // ** matches any directory
-      .replace(/\*/g, '[^/\\\\]*') // * matches any file/directory name
-      .replace(/\?/g, '.')        // ? matches any single character
-      .replace(/\./g, '\\.');     // Escape dots
+    try {
+      // Convert glob pattern to regex safely
+      const regexPattern = pattern
+        .replace(/\*\*/g, '.*')     // ** matches any directory
+        .replace(/\*/g, '[^/\\\\]*') // * matches any file/directory name
+        .replace(/\?/g, '.')        // ? matches any single character
+        .replace(/\./g, '\\.');     // Escape dots
 
-    const regex = new RegExp(`^${regexPattern}$`, 'i');
-    return regex.test(filePath);
+      // Validate the pattern before creating regex
+      if (!regexPattern || regexPattern.trim() === '') {
+        return false;
+      }
+
+      const regex = new RegExp(`^${regexPattern}$`, 'i');
+      return regex.test(filePath);
+    } catch (error) {
+      // Log regex errors for debugging
+      getDebugConsole().logError(
+        new Error(`Invalid regex pattern: ${pattern} -> ${error instanceof Error ? error.message : String(error)}`),
+        'matchesPattern'
+      );
+      return false;
+    }
   }
 
   /**

@@ -1,10 +1,10 @@
 # ViewerKit SDK
 
-ViewerKit is a robust SDK crafted to enable developers to build extensions for VS Code and Cursor, transforming AI IDEs into versatile AI agents beyond coding. By providing a unified API, it allows developers to seamlessly integrate custom viewing and editing experiences into their extensions without dealing with complex backend tasks, enabling them to focus on frontend or user facing features. Optimized for vibe coding, ViewerKit empowers you to create tailored data visualization agents, content creation workspaces, i18n management toolkits, and much more.
+ViewerKit is a robust SDK crafted to enable developers to build extensions for VS Code, Cursor, Windsurf, Trae, Kiro and other VS Code-based editors, transforming AI IDEs into versatile AI agents beyond coding. By providing a unified API, it allows developers to seamlessly integrate custom viewing and editing experiences into their extensions without dealing with complex backend tasks, enabling them to focus on frontend or user facing features. Optimized for vibe coding, ViewerKit empowers you to create tailored data visualization agents, content creation workspaces, i18n management toolkits, and much more.
 
 ## 🚀 Features
 
-- **Universal File Operations**: Cross-platform file API that works in VS Code, Cursor, Windsurf and Trae.
+- **Universal File Operations**: Cross-platform file API that works in VS Code, Cursor, Windsurf, Trae, Kiro (AWS), and other Code OSS-based editors.
 - **Hot Reload**: Automatic file watching with 100ms debounce and conflict resolution
 - **Smart Autosave**: Intelligent autosave that is designed to work with hot reload
 - **React Hooks**: Pre-built hooks for file watching, autosave, and state management
@@ -20,7 +20,7 @@ npm install viewerkit
 
 **Requirements:**
 - Node.js ≥18
-- VS Code ≥1.85.0 (includes Cursor, Windsurf and Trae)
+- VS Code ≥1.85.0 (includes Cursor, Windsurf, Trae and Kiro)
 - React ≥18 (for React features)
 
 ## 🎯 Quick Start

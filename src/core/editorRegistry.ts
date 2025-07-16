@@ -4,7 +4,7 @@ import { getBridge } from './runtime/bridge';
 /**
  * Supported editor types
  */
-export type EditorType = 'vscode' | 'cursor' | 'windsurf' | 'unknown';
+export type EditorType = 'vscode' | 'cursor' | 'windsurf' | 'kiro' | 'unknown';
 
 /**
  * Webview panel configuration manifest
@@ -160,6 +160,20 @@ export class EditorRegistry {
       };
     }
 
+    // Check for Kiro-specific features
+    if (this.isKiro()) {
+      return {
+        type: 'kiro',
+        version,
+        capabilities: {
+          webviewPanels: true,
+          fileSystemWatcher: true,
+          themeDetection: true,
+          diagnostics: true,
+        },
+      };
+    }
+
     // Default to VS Code
     if (this.isVSCode()) {
       return {
@@ -237,6 +251,29 @@ export class EditorRegistry {
   }
 
   /**
+   * Check if running in Kiro
+   */
+  private isKiro(): boolean {
+    try {
+      // Kiro-specific detection
+      // Based on research: Kiro is an AWS agentic IDE built on Code OSS
+      return (
+        process.env.KIRO === 'true' ||
+        process.execPath.includes('kiro') ||
+        process.env.VSCODE_CWD?.includes('kiro') ||
+        process.env.AWS_KIRO === 'true' ||
+        // Check for Kiro-specific environment variables
+        typeof (globalThis as any).acquireKiroApi !== 'undefined' ||
+        // Check application name or identifier
+        (typeof vscode !== 'undefined' && (vscode as any).env?.appName?.toLowerCase().includes('kiro')) ||
+        false
+      );
+    } catch {
+      return false;
+    }
+  }
+
+  /**
    * Process HTML content for webview, handling CSP and resource paths
    */
   private processHtmlContent(
@@ -254,15 +291,31 @@ export class EditorRegistry {
       }
     );
 
-    // Add default CSP if not present
+    // Also handle href attributes for CSS and other resources
+    processedHtml = processedHtml.replace(
+      /href="\.\/([^"]+)"/g,
+      (_, path) => {
+        const resourceUri = vscode.Uri.joinPath(extensionUri, path);
+        const webviewUri = webview.asWebviewUri(resourceUri);
+        return `href="${webviewUri}"`;
+      }
+    );
+
+    // Add default CSP if not present - enhanced for Kiro compatibility
     if (!processedHtml.includes('<meta http-equiv="Content-Security-Policy"')) {
+      const editorInfo = this.getEditorInfo();
+      
+      // Enhanced CSP for better compatibility across editors including Kiro
       const defaultCSP = `
         <meta http-equiv="Content-Security-Policy" content="
           default-src 'none';
-          script-src ${webview.cspSource} 'unsafe-inline';
+          script-src ${webview.cspSource} 'unsafe-inline' 'unsafe-eval';
           style-src ${webview.cspSource} 'unsafe-inline';
-          img-src ${webview.cspSource} data:;
-          font-src ${webview.cspSource};
+          img-src ${webview.cspSource} data: blob:;
+          font-src ${webview.cspSource} data:;
+          connect-src ${webview.cspSource};
+          media-src ${webview.cspSource};
+          ${editorInfo.type === 'kiro' ? 'worker-src blob:;' : ''}
         ">
       `.replace(/\s+/g, ' ').trim();
       

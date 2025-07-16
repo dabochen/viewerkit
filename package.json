@@ -1,6 +1,6 @@
 {
   "name": "viewerkit",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "SDK for building VS Code/Cursor extensions with minimal setup",
   "main": "dist/index.cjs",
   "module": "dist/index.js",
@@ -41,8 +41,8 @@
   },
   "devDependencies": {
     "@types/node": "^24.0.12",
-    "@types/react": "^18.3.23",
-    "@types/react-dom": "^18.3.7",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
     "@types/vscode": "^1.85.0",
     "@typescript-eslint/eslint-plugin": "^6.0.0",
     "@typescript-eslint/parser": "^6.0.0",
@@ -53,8 +53,8 @@
     "typescript": "^5.0.0"
   },
   "peerDependencies": {
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0"
+    "react": "^18.0.0 || ^19.0.0",
+    "react-dom": "^18.0.0 || ^19.0.0"
   },
   "files": [
     "dist",
