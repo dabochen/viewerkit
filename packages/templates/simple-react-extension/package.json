@@ -53,8 +53,7 @@
     "typescript": "^5.3.0"
   },
   "dependencies": {
-    "@viewerkit/sdk": "file:../../packages/sdk",
-    "@viewerkit/template-simple-react": "file:../../packages/templates/simple-react",
+    "viewerkit-core": "file:../../viewerkit-core",
     "react": "^18.0.0",
     "react-dom": "^18.0.0"
   }

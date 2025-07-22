@@ -3,8 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
-    "@viewerkit/sdk": "file:../../../packages/sdk",
-    "@viewerkit/template-simple-react": "file:../../../packages/templates/simple-react",
+    "@viewerkit/core": "file:../../../packages/viewerkit-core",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "marked": "^9.1.6"

@@ -59,6 +59,9 @@ temp/
 ehthumbs.db
 Thumbs.db
 
+# Development documentation (not for public release)
+documentation/
+
 # TypeScript cache
 *.tsbuildinfo
 
