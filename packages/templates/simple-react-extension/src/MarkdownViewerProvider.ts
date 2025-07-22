@@ -33,12 +33,14 @@ export class MarkdownViewerProvider implements vscode.CustomTextEditorProvider {
                         break;
                     case 'save':
                         // Handle save requests from webview
+                        console.log('Extension received save request from webview');
                         this.isWebviewSaving = true;
                         await this.saveDocument(document, message.content);
-                        // Reset flag after a short delay to allow document change event to process
+                        // Reset flag after a longer delay to handle autosave timing (400ms + buffer)
                         setTimeout(() => {
+                            console.log('Extension clearing isWebviewSaving flag');
                             this.isWebviewSaving = false;
-                        }, 100);
+                        }, 600);
                         break;
                     case 'getFileContent':
                         // Handle file content requests

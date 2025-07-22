@@ -6,6 +6,8 @@ interface MarkdownViewerProps {
 }
 
 export const MarkdownViewer: React.FC<MarkdownViewerProps> = () => {
+  console.log('[AUTO-SAVE] 🔄 MarkdownViewer component rendering (POTENTIAL RELOAD POINT)');
+  
   const [filePath, setFilePath] = useState<string>('');
   const [fileName, setFileName] = useState<string>('');
   const [isInitialized, setIsInitialized] = useState<boolean>(false);
@@ -18,7 +20,6 @@ export const MarkdownViewer: React.FC<MarkdownViewerProps> = () => {
   const { 
     data: markdownContent, 
     setData: setMarkdownContent, 
-    loading, 
     error, 
     save, 
     hasUnsavedChanges,
@@ -68,25 +69,63 @@ export const MarkdownViewer: React.FC<MarkdownViewerProps> = () => {
 
 
 
+  // Track if content change is from user typing vs external update
+  const isUserTypingRef = useRef(false);
+  
   // Handle textarea content changes with cursor preservation
   const handleContentChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
     const newContent = event.target.value;
-    const textarea = event.target;
+    
+    console.log('[AUTO-SAVE] ⌨️ User typed - starting autosave chain');
+    console.log('[AUTO-SAVE] 📝 Content length:', newContent.length);
+    
+    // Mark that this change is from user typing
+    isUserTypingRef.current = true;
     
     // Save cursor position
+    const textarea = event.target;
     cursorPositionRef.current = {
       start: textarea.selectionStart,
       end: textarea.selectionEnd
     };
     
+    // Update content - this will trigger autosave but NOT cause visual refresh
+    // because the textarea already has the new value
+    console.log('[AUTO-SAVE] 🔄 Calling setMarkdownContent (POTENTIAL RELOAD POINT)');
     setMarkdownContent(newContent);
+    
+    // Clear the typing flag after a short delay
+    setTimeout(() => {
+      console.log('[AUTO-SAVE] ✅ Clearing typing flag');
+      isUserTypingRef.current = false;
+    }, 100);
   };
   
-  // Preserve cursor position after content updates
+  // Preserve cursor position ONLY for external updates (not user typing)
   useEffect(() => {
-    if (textareaRef.current && document.activeElement === textareaRef.current) {
+    console.log('[AUTO-SAVE] 🔄 Cursor preservation useEffect triggered (POTENTIAL RELOAD POINT)');
+    console.log('[AUTO-SAVE] 📝 markdownContent changed, length:', markdownContent?.length || 0);
+    console.log('[AUTO-SAVE] ⌨️ isUserTyping:', isUserTypingRef.current);
+    
+    // Only restore cursor position if:
+    // 1. Textarea is focused
+    // 2. This is NOT from user typing (i.e., it's an external update)
+    // 3. Content actually changed (to prevent unnecessary calls)
+    if (textareaRef.current && 
+        document.activeElement === textareaRef.current && 
+        !isUserTypingRef.current) {
       const { start, end } = cursorPositionRef.current;
-      textareaRef.current.setSelectionRange(start, end);
+      console.log('[AUTO-SAVE] 🎯 Restoring cursor position for external update:', start, end);
+      
+      // Use requestAnimationFrame to avoid visual disruption
+      requestAnimationFrame(() => {
+        if (textareaRef.current && document.activeElement === textareaRef.current) {
+          console.log('[AUTO-SAVE] ⚙️ Actually setting cursor selection range (VISUAL EFFECT)');
+          textareaRef.current.setSelectionRange(start, end);
+        }
+      });
+    } else {
+      console.log('[AUTO-SAVE] ⏭️ Skipping cursor restoration - user is typing or textarea not focused');
     }
   }, [markdownContent]);
 
@@ -136,16 +175,7 @@ export const MarkdownViewer: React.FC<MarkdownViewerProps> = () => {
     alignItems: 'center',
   };
 
-  if (loading) {
-    return (
-      <div style={containerStyle}>
-        <div style={{ textAlign: 'center', padding: '50px' }}>
-          <h2>Loading...</h2>
-          <p>Loading markdown file...</p>
-        </div>
-      </div>
-    );
-  }
+  // Removed loading condition - it caused unnecessary re-renders
 
   if (error) {
     return (
@@ -166,9 +196,8 @@ export const MarkdownViewer: React.FC<MarkdownViewerProps> = () => {
           <p style={{ margin: 0, opacity: 0.7, fontSize: '12px' }}>ViewerKit Extension - Live Editing</p>
         </div>
         <div style={{ fontSize: '12px', opacity: 0.7 }}>
-          {loading && 'Saving...'}
-          {!loading && !error && hasUnsavedChanges && 'Unsaved changes'}
-          {!loading && !error && !hasUnsavedChanges && (filePath ? 'Saved' : 'Waiting for file...')}
+          {!error && hasUnsavedChanges && 'Unsaved changes'}
+          {!error && !hasUnsavedChanges && (filePath ? 'Saved' : 'Waiting for file...')}
           {conflictResolution === 'external' && (
             <span style={{ color: 'var(--vscode-notificationsWarningIcon-foreground)' }}>
               ⚠️ External changes detected
