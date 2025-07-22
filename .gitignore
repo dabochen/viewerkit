@@ -42,9 +42,8 @@ tmp/
 temp/
 
 # IDE and Editor files
-.vscode/
-!.vscode/launch.json
 .cursor/
+.windsurf/
 .idea/
 *.swp
 *.swo
@@ -58,6 +57,7 @@ temp/
 .Trashes
 ehthumbs.db
 Thumbs.db
+.folderinfo
 
 # Development documentation (not for public release)
 documentation/

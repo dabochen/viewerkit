@@ -2,7 +2,7 @@
 
 🚀 **Build powerful VS Code extensions with React webviews in minutes, not hours.**
 
-ViewerKit is a complete source-based toolkit for creating VS Code extensions with sophisticated file viewing and editing capabilities. Instead of wrestling with webview APIs, file I/O, and state management, you get a production-ready template with advanced UX features like autosave, hot reload, and conflict resolution built-in.
+ViewerKit is a robust VS Code extension toolkit crafted to enable developers to build extensions for VS Code, Cursor, Windsurf, Trae, Kiro and other VS Code-based editors, transforming AI IDEs into versatile AI agents beyond coding. By providing a modularized file I/O API, it allows developers to seamlessly integrate custom viewing and editing experiences into their extensions without dealing with complex backend tasks, enabling them to focus on frontend and user facing features. Optimized for vibe coding, ViewerKit empowers you to create tailored data visualization agents, content creation workspaces, i18n management toolkits, and much more.
 
 ## ✨ **Why ViewerKit?**
 
@@ -10,7 +10,7 @@ ViewerKit is a complete source-based toolkit for creating VS Code extensions wit
 - **🎯 Focus on Your UX**: Core file operations and state management handled for you  
 - **🔥 Advanced Features**: Autosave, hot reload, conflict resolution, cursor preservation
 - **🎨 Theme Integration**: Automatic VS Code theme synchronization
-- **📱 Universal Compatibility**: Works across VS Code, Cursor, Windsurf, and other Code OSS editors
+- **📱 Universal Compatibility**: Works across VS Code, Cursor, Windsurf, and other VS code based editors
 - **🛡️ TypeScript First**: Full type safety throughout
 
 ## 🏗️ **Project Structure**
@@ -45,6 +45,8 @@ pnpm run build
 ```
 
 ### **3. Try the Template Extension**
+The template "simple-react-extension" is a boiler plate extension that opens a markdown file in a webview, it is added to this project to showcase the best practices of using ViewerKit. You can customise the template to build your own extension on any file format with any UI you want.
+
 ```bash
 # Build the template extension
 cd packages/templates/simple-react-extension
@@ -52,6 +54,8 @@ npm run compile
 cd webview-ui && npm run build
 
 # Open in VS Code and press F5 to test
+# Or click on the "Run and Debug button" at the top left corner, then click on the Play button, this should load the default simple-react-extension in a new window
+# Then right click on a .md file and select "Open with Simple React Extension" to open the markdown file in a webview
 code .
 ```
 
