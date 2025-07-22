@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, ReactNode, CSSProperties } from 'react';
 import { useTheme } from '../hooks/useTheme';
-import { getDebugConsole } from '../core/debugConsole';
+import { getDebugConsole } from '@viewerkit/sdk';
 
 /**
  * Props for BasePanel component

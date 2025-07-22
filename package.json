@@ -1,7 +1,7 @@
 {
   "name": "viewerkit",
   "version": "1.0.1",
-  "description": "SDK for building VS Code/Cursor extensions with minimal setup",
+  "description": "SDK for building VS Code/Cursor extensions with minimal setup (monorepo root)",
   "main": "dist/index.cjs",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -10,14 +10,18 @@
     "node": ">=18",
     "vscode": "^1.85.0"
   },
-  "packageManager": "pnpm@8",
+  "packageManager": "pnpm@8.0.0",
   "scripts": {
-    "build": "tsup",
-    "dev": "tsup --watch",
-    "typecheck": "tsc --noEmit",
-    "lint": "eslint src --ext .ts,.tsx",
-    "lint:fix": "eslint src --ext .ts,.tsx --fix",
-    "prepublishOnly": "pnpm run build",
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "typecheck": "turbo run typecheck",
+    "lint": "turbo run lint",
+    "lint:fix": "turbo run lint:fix",
+    "test": "turbo run test",
+    "clean": "turbo run clean",
+    "build:legacy": "tsup",
+    "dev:legacy": "tsup --watch",
+    "prepublishOnly": "pnpm run build:legacy",
     "docs": "typedoc"
   },
   "keywords": [
@@ -49,6 +53,7 @@
     "eslint": "^8.0.0",
     "eslint-config-airbnb-typescript": "^17.0.0",
     "tsup": "^8.0.0",
+    "turbo": "^1.10.0",
     "typedoc": "^0.28.7",
     "typescript": "^5.0.0"
   },

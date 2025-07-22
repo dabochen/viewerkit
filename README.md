@@ -1,34 +1,62 @@
-# ViewerKit SDK
+# ViewerKit Monorepo
 
-ViewerKit is a robust SDK crafted to enable developers to build extensions for VS Code, Cursor, Windsurf, Trae, Kiro and other VS Code-based editors, transforming AI IDEs into versatile AI agents beyond coding. By providing a unified API, it allows developers to seamlessly integrate custom viewing and editing experiences into their extensions without dealing with complex backend tasks, enabling them to focus on frontend or user facing features. Optimized for vibe coding, ViewerKit empowers you to create tailored data visualization agents, content creation workspaces, i18n management toolkits, and much more.
+ViewerKit is a robust SDK and template system crafted to enable developers to build extensions for VS Code, Cursor, Windsurf, Trae, Kiro and other VS Code-based editors, transforming AI IDEs into versatile AI agents beyond coding. By providing a unified API and React templates, it allows developers to seamlessly integrate custom viewing and editing experiences into their extensions without dealing with complex backend tasks, enabling them to focus on frontend or user facing features.
+
+## 📁 Monorepo Structure
+
+This monorepo contains multiple packages:
+
+- **`@viewerkit/sdk`** (`packages/sdk/`) - Core backend functionality, framework-agnostic
+- **`@viewerkit/template-simple-react`** (`packages/templates/simple-react/`) - Universal React template with hooks and UI components
+- **`extensions/`** - VS Code extensions demonstrating ViewerKit usage
+- **`viewerkit`** (root) - Legacy compatibility layer for gradual migration
 
 ## 🚀 Features
 
-- **Universal File Operations**: Cross-platform file API that works in VS Code, Cursor, Windsurf, Trae, Kiro (AWS), and other Code OSS-based editors.
+### SDK Package (`@viewerkit/sdk`)
+- **Universal File Operations**: Cross-platform file API that works in VS Code, Cursor, Windsurf, Trae, Kiro (AWS), and other Code OSS-based editors
 - **Hot Reload**: Automatic file watching with 100ms debounce and conflict resolution
-- **Smart Autosave**: Intelligent autosave that is designed to work with hot reload
-- **React Hooks**: Pre-built hooks for file watching, autosave, and state management
-- **TypeScript First**: Full type safety with comprehensive .d.ts files
+- **Smart Autosave**: Intelligent autosave designed to work with hot reload
 - **Theme Integration**: Seamless VS Code theme synchronization using CSS variables
-- **Templates**: Use templates on top of the sdk to build your extension in a few prompts
+- **TypeScript First**: Full type safety with comprehensive .d.ts files
+- **Framework Agnostic**: No React dependencies in core SDK
+
+### Template Package (`@viewerkit/template-simple-react`)
+- **React Hooks**: Pre-built hooks for file watching, autosave, and state management
+- **UI Components**: Theme-aware React components
+- **Universal Viewer**: Configurable viewer implementation for different file types
+- **SDK Integration**: Built on top of the core SDK
 
 ## 📦 Installation
 
+### For New Projects (Recommended)
+
 ```bash
+# Install SDK for core functionality
+npm install @viewerkit/sdk
+
+# Install React template for frontend
+npm install @viewerkit/template-simple-react
+```
+
+### Legacy Compatibility
+
+```bash
+# Still works for existing projects
 npm install viewerkit
 ```
 
 **Requirements:**
 - Node.js ≥18
 - VS Code ≥1.85.0 (includes Cursor, Windsurf, Trae and Kiro)
-- React ≥18 (for React features)
+- React ≥18 (for template package)
 
 ## 🎯 Quick Start
 
-### Basic File Operations
+### Using SDK Package (Backend/Core)
 
 ```typescript
-import { Features } from 'viewerkit';
+import { Features } from '@viewerkit/sdk';
 
 // Read a file with metadata
 const result = await Features.fileOps.readFile('path/to/file.txt');
@@ -38,27 +66,27 @@ if (result.success) {
 }
 
 // Write a file with metadata
-const result = await Features.writeFile('output.txt', 'Hello ViewerKit!');
+const result = await Features.fileOps.writeFile('output.txt', 'Hello ViewerKit!');
 console.log(`Wrote ${result.data} bytes`);
 ```
 
-### React Integration
+### Using Template Package (React Frontend)
 
 ```tsx
-import { Hooks, UI } from 'viewerkit';
+import { useWatchedFile, useAutosave, useTheme, BasePanel } from '@viewerkit/template-simple-react';
 
 function MyEditor() {
   // Watch a file for changes (includes content, error state, and auto-reload)
-  const fileData = Hooks.useWatchedFile('/path/to/config.json');
+  const fileData = useWatchedFile('/path/to/config.json');
   
   // Auto-save with 400ms debounce and conflict resolution
-  const saveFunction = Hooks.useAutosave('/path/to/draft.md', 400);
+  const saveFunction = useAutosave('/path/to/draft.md', 400);
   
   // Get current VS Code theme with CSS variables
-  const { theme, cssVariables, isDark } = Hooks.useTheme();
+  const { theme, cssVariables, isDark } = useTheme();
   
   return (
-    <UI.BasePanel title="My Editor" subtitle="Edit your configuration">
+    <BasePanel title="My Editor" subtitle="Edit your configuration">
       <p>File: {fileData.data || 'Loading...'}</p>
       <p>Theme: {isDark ? 'Dark' : 'Light'}</p>
       

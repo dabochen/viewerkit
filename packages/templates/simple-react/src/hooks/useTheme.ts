@@ -1,13 +1,13 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
-import { 
-  onThemeChange, 
-  webGetCurrentTheme as getCurrentTheme, 
-  getCurrentCSSVariables, 
-  getWebThemeSyncManager,
-  type WebThemeInfo, 
-  type WebViewerKitCSSVariables
-} from '../features/themeSync';
-import { getDebugConsole } from '../core/debugConsole';
+import { Features, getDebugConsole } from '@viewerkit/sdk';
+import type { WebThemeInfo, WebViewerKitCSSVariables } from '@viewerkit/sdk';
+
+const {
+  onThemeChange,
+  webGetCurrentTheme: getCurrentTheme,
+  getCurrentCSSVariables,
+  getWebThemeSyncManager
+} = Features.ThemeSync;
 
 /**
  * Options for useTheme hook

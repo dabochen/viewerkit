@@ -1,6 +1,8 @@
 import { useCallback, useRef, useEffect, useState } from 'react';
-import { webAutosave, type WebAutosaveResult } from '../features/autosave';
-import { getDebugConsole } from '../core/debugConsole';
+import { Features, getDebugConsole } from '@viewerkit/sdk';
+import type { WebAutosaveResult } from '@viewerkit/sdk';
+
+const { webAutosave } = Features.Autosave;
 
 /**
  * Options for useAutosave hook

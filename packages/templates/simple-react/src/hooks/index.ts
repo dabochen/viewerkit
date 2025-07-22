@@ -35,12 +35,5 @@ export {
   type MessageHandler,
 } from './useBridge';
 
-// Re-export commonly used types from features for convenience
-export type { WebFileChangeEvent } from '../features/hotReload';
-export type { WebAutosaveResult, WebAutosaveOptions } from '../features/autosave';
-export type { 
-  WebThemeInfo, 
-  WebViewerKitCSSVariables, 
-  ThemeChangeHandler 
-} from '../features/themeSync';
-export type { Message } from '../core/runtime/bridge'; 
+// Re-export commonly used types from SDK for convenience
+export type { WebFileChangeEvent, WebAutosaveResult, WebThemeInfo, WebViewerKitCSSVariables, Message } from '@viewerkit/sdk'; 

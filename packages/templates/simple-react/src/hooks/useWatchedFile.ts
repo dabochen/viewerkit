@@ -1,7 +1,9 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
-import { onFileChange, requestFileContent, type WebFileChangeEvent } from '../features/hotReload';
-import { webAutosave as autosave } from '../features/autosave';
-import { getDebugConsole } from '../core/debugConsole';
+import { Features, getDebugConsole } from '@viewerkit/sdk';
+import type { WebFileChangeEvent } from '@viewerkit/sdk';
+
+const { onFileChange, requestFileContent } = Features.HotReload;
+const { webAutosave: autosave } = Features.Autosave;
 
 /**
  * Options for useWatchedFile hook

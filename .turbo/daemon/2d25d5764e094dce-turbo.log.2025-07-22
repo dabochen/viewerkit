@@ -1,0 +1,23 @@
+2025-07-22T04:46:38.324664Z  WARN build:build_inner: turborepo_repository::package_graph::builder: Unable to calculate transitive closures: Workspace 'packages/templates/simple-react' not found in lockfile
+2025-07-22T04:46:38.326672Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf(".turbo/cookies/1.cookie"), AnchoredSystemPathBuf(".turbo/cookies/.turbo-cookie")}
+2025-07-22T04:46:38.326679Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-07-22T04:46:38.427181Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf(".turbo/cookies/2.cookie"), AnchoredSystemPathBuf("packages/sdk/.turbo")}
+2025-07-22T04:46:38.427193Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@viewerkit/sdk"), path: AnchoredSystemPathBuf("packages/sdk") }, WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-07-22T04:46:39.326836Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/sdk/tsup.config.bundled_fprp1ogxohh.mjs")}
+2025-07-22T04:46:39.326847Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@viewerkit/sdk"), path: AnchoredSystemPathBuf("packages/sdk") }}))
+2025-07-22T04:46:40.425702Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/templates/simple-react/.turbo"), AnchoredSystemPathBuf(".turbo/cookies/3.cookie"), AnchoredSystemPathBuf(".turbo/cookies/4.cookie")}
+2025-07-22T04:46:40.425712Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@viewerkit/template-simple-react"), path: AnchoredSystemPathBuf("packages/templates/simple-react") }, WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-07-22T04:46:41.225649Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/templates/simple-react/tsup.config.bundled_gbvpn7eu2ze.mjs")}
+2025-07-22T04:46:41.225657Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@viewerkit/template-simple-react"), path: AnchoredSystemPathBuf("packages/templates/simple-react") }}))
+2025-07-22T04:46:42.427066Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf(".turbo/cookies/5.cookie")}
+2025-07-22T04:46:42.427077Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-07-22T04:53:03.728805Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("extensions")}
+2025-07-22T04:53:03.729087Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-07-22T04:53:14.228177Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("extensions/README.md")}
+2025-07-22T04:53:14.228194Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-07-22T04:53:14.328018Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("extensions/README.md")}
+2025-07-22T04:53:14.328066Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-07-22T04:56:52.832374Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("README.md")}
+2025-07-22T04:56:52.832397Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-07-22T04:57:13.134472Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("README.md")}
+2025-07-22T04:57:13.134507Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))

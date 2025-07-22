@@ -1,6 +1,5 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
-import { getBridge, type Message } from '../core/runtime/bridge';
-import { getDebugConsole } from '../core/debugConsole';
+import { getBridge, getDebugConsole, type Message } from '@viewerkit/sdk';
 
 /**
  * Options for useBridge hook
