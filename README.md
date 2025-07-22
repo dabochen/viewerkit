@@ -7,8 +7,8 @@ ViewerKit is a robust SDK and template system crafted to enable developers to bu
 This monorepo contains multiple packages:
 
 - **`@viewerkit/sdk`** (`packages/sdk/`) - Core backend functionality, framework-agnostic
-- **`@viewerkit/template-simple-react`** (`packages/templates/simple-react/`) - Universal React template with hooks and UI components
-- **`extensions/`** - VS Code extensions demonstrating ViewerKit usage
+- **`@viewerkit/template-simple-react`** (`packages/templates/simple-react-extension/`) - Official VS Code extension template with React webview
+- **Extensions** (`extensions/`) - Custom extensions for development and testing ViewerKit usage
 - **`viewerkit`** (root) - Legacy compatibility layer for gradual migration
 
 ## 🚀 Features

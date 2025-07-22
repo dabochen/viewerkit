@@ -1,4 +1,4 @@
 packages:
-  - 'packages/*'
-  - 'packages/templates/*'
-  - 'extensions/*'
+  - "packages/*"
+  - "packages/templates/*"
+  - "extensions/*"

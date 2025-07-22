@@ -43,6 +43,7 @@ temp/
 
 # IDE and Editor files
 .vscode/
+!.vscode/launch.json
 .cursor/
 .idea/
 *.swp

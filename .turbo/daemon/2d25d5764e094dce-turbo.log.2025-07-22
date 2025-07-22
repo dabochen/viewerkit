@@ -21,3 +21,147 @@
 2025-07-22T04:56:52.832397Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
 2025-07-22T04:57:13.134472Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("README.md")}
 2025-07-22T04:57:13.134507Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-07-22T05:03:08.041952Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("extensions/markdown-viewer")}
+2025-07-22T05:03:08.042148Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-07-22T05:03:17.142715Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("extensions/markdown-viewer/package.json")}
+2025-07-22T05:03:17.142732Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-07-22T05:03:23.142814Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("extensions/markdown-viewer/tsconfig.json")}
+2025-07-22T05:03:23.142824Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-07-22T05:03:40.842355Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("extensions/markdown-viewer/src")}
+2025-07-22T05:03:40.842364Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-07-22T05:03:47.243144Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("extensions/markdown-viewer/src/extension.ts")}
+2025-07-22T05:03:47.243157Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-07-22T05:03:47.341811Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("extensions/markdown-viewer/src/extension.ts")}
+2025-07-22T05:03:47.342046Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-07-22T05:04:05.274756Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("extensions/markdown-viewer/src/MarkdownViewerProvider.ts")}
+2025-07-22T05:04:05.277552Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-07-22T05:04:12.343921Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("extensions/markdown-viewer/webview-ui/src"), AnchoredSystemPathBuf("extensions/markdown-viewer/webview-ui")}
+2025-07-22T05:04:12.343940Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-07-22T05:04:19.543621Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("extensions/markdown-viewer/webview-ui/package.json")}
+2025-07-22T05:04:19.543638Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-07-22T05:04:27.943812Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("extensions/markdown-viewer/webview-ui/webpack.config.js")}
+2025-07-22T05:04:27.943839Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-07-22T05:04:28.042760Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("extensions/markdown-viewer/webview-ui/webpack.config.js")}
+2025-07-22T05:04:28.042769Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-07-22T05:04:35.443850Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("extensions/markdown-viewer/webview-ui/tsconfig.json")}
+2025-07-22T05:04:35.443878Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-07-22T05:04:42.542897Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("extensions/markdown-viewer/webview-ui/src/index.tsx")}
+2025-07-22T05:04:42.542908Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-07-22T05:04:59.944977Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("extensions/markdown-viewer/webview-ui/src/MarkdownViewer.tsx")}
+2025-07-22T05:04:59.945000Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-07-22T05:05:13.644488Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("extensions/markdown-viewer/webview-ui/src/styles.css")}
+2025-07-22T05:05:13.644510Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-07-22T05:09:13.850231Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf(".vscode")}
+2025-07-22T05:09:13.850257Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-07-22T05:10:56.751988Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("extensions/markdown-viewer/node_modules")}
+2025-07-22T05:10:56.752018Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-07-22T05:12:04.258318Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("extensions/markdown-viewer/webview-ui/node_modules")}
+2025-07-22T05:12:04.258385Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-07-22T05:12:34.155640Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("extensions/markdown-viewer/webview-ui/src/index.tsx")}
+2025-07-22T05:12:34.155712Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-07-22T05:12:44.954222Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("extensions/markdown-viewer/webview-ui/src/index.tsx")}
+2025-07-22T05:12:44.954285Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-07-22T05:12:54.655189Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("extensions/markdown-viewer/webview-ui/src/MarkdownViewer.tsx")}
+2025-07-22T05:12:54.655215Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-07-22T05:13:38.456406Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("extensions/markdown-viewer/webview-ui/src/MarkdownViewer.tsx")}
+2025-07-22T05:13:38.456432Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-07-22T05:14:10.657572Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("extensions/markdown-viewer/webview-ui/tsconfig.json")}
+2025-07-22T05:14:10.657601Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-07-22T05:14:24.556421Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("extensions/markdown-viewer/webview-ui/build")}
+2025-07-22T05:14:24.556452Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-07-22T05:14:46.556795Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("extensions/markdown-viewer/webview-ui/src/MarkdownViewer.js"), AnchoredSystemPathBuf("extensions/markdown-viewer/webview-ui/src/index.js.map"), AnchoredSystemPathBuf("extensions/markdown-viewer/out"), AnchoredSystemPathBuf("extensions/markdown-viewer/webview-ui/src/index.js"), AnchoredSystemPathBuf("extensions/markdown-viewer/webview-ui/src/MarkdownViewer.js.map")}
+2025-07-22T05:14:46.556830Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-07-22T05:14:56.258059Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("extensions/markdown-viewer/tsconfig.json")}
+2025-07-22T05:14:56.258078Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-07-22T05:15:37.357912Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("test-sample.md")}
+2025-07-22T05:15:37.357949Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-07-22T05:20:15.466136Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf(".gitignore")}
+2025-07-22T05:20:15.466158Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-07-22T05:47:01.235422Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("extensions/markdown-viewer/webview-ui/src/MarkdownViewer.tsx")}
+2025-07-22T05:47:01.235491Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-07-22T05:47:23.134329Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("extensions/markdown-viewer/webview-ui/src/MarkdownViewer.tsx")}
+2025-07-22T05:47:23.134370Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-07-22T05:47:49.234922Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("extensions/markdown-viewer/webview-ui/src/MarkdownViewer.tsx")}
+2025-07-22T05:47:49.235040Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-07-22T05:48:09.045724Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("extensions/markdown-viewer/webview-ui/src/MarkdownViewer.tsx")}
+2025-07-22T05:48:09.045773Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-07-22T05:48:20.962045Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("extensions/markdown-viewer/webview-ui/src/MarkdownViewer.tsx")}
+2025-07-22T05:48:20.962090Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-07-22T05:52:01.277199Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("extensions/markdown-viewer/webview-ui/webpack.config.js")}
+2025-07-22T05:52:01.277326Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-07-22T05:52:14.377824Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("extensions/markdown-viewer/src/MarkdownViewerProvider.ts")}
+2025-07-22T05:52:14.377836Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-07-22T05:52:40.376903Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("extensions/markdown-viewer/src/MarkdownViewerProvider.ts")}
+2025-07-22T05:52:40.376923Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-07-22T05:56:00.577287Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("extensions/markdown-viewer/webview-ui/src/WebViewerKit.ts")}
+2025-07-22T05:56:00.577320Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-07-22T05:56:18.178695Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("extensions/markdown-viewer/webview-ui/src/MarkdownViewer.tsx")}
+2025-07-22T05:56:18.178723Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-07-22T05:56:31.578809Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("extensions/markdown-viewer/webview-ui/src/MarkdownViewer.tsx")}
+2025-07-22T05:56:31.578841Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-07-22T06:06:37.698568Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("extensions/markdown-viewer/webview-ui/src/WebViewerKit.ts")}
+2025-07-22T06:06:37.698614Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-07-22T06:06:47.296317Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("extensions/markdown-viewer/webview-ui/src/WebViewerKit.ts")}
+2025-07-22T06:06:47.296326Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-07-22T06:07:08.295788Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("extensions/markdown-viewer/webview-ui/src/MarkdownViewer.tsx")}
+2025-07-22T06:07:08.295821Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-07-22T06:12:11.901180Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("extensions/markdown-viewer/src/MarkdownViewerProvider.ts")}
+2025-07-22T06:12:11.901290Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-07-22T06:12:29.102463Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("extensions/markdown-viewer/webview-ui/src/MarkdownViewer.tsx")}
+2025-07-22T06:12:29.102506Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-07-22T06:12:47.698142Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("extensions/markdown-viewer/webview-ui/src/WebViewerKit.ts")}
+2025-07-22T06:12:47.698179Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-07-22T06:23:03.402218Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("extensions/markdown-viewer/webview-ui/src/WebViewerKit.ts")}
+2025-07-22T06:23:03.402246Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-07-22T06:23:44.401655Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("extensions/markdown-viewer/src/MarkdownViewerProvider.ts")}
+2025-07-22T06:23:44.401680Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-07-22T06:44:35.373685Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("extensions/markdown-viewer/src/MarkdownViewerProvider.ts")}
+2025-07-22T06:44:35.373998Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-07-22T06:44:57.372238Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("extensions/markdown-viewer/src/MarkdownViewerProvider.ts")}
+2025-07-22T06:44:57.372270Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-07-22T06:45:27.571884Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("extensions/markdown-viewer/webview-ui/src/WebViewerKit.ts")}
+2025-07-22T06:45:27.571907Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-07-22T06:52:47.771607Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("extensions/markdown-viewer/webview-ui/src/MarkdownViewer.tsx")}
+2025-07-22T06:52:47.771639Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-07-22T06:53:10.372426Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("extensions/markdown-viewer/src/MarkdownViewerProvider.ts")}
+2025-07-22T06:53:10.372446Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-07-22T06:53:22.771210Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("extensions/markdown-viewer/webview-ui/src/MarkdownViewer.tsx")}
+2025-07-22T06:53:22.771225Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-07-22T06:53:51.572835Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("extensions/markdown-viewer/webview-ui/src/MarkdownViewer.tsx")}
+2025-07-22T06:53:51.572865Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-07-22T06:54:34.871954Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("extensions/markdown-viewer/webview-ui/src/MarkdownViewer.tsx")}
+2025-07-22T06:54:34.871980Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-07-22T06:57:32.871299Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("extensions/markdown-viewer/webview-ui/src/MarkdownViewer.tsx"), AnchoredSystemPathBuf("extensions/markdown-viewer/src/MarkdownViewerProvider.ts"), AnchoredSystemPathBuf("extensions/markdown-viewer/webview-ui/src/WebViewerKit.ts")}
+2025-07-22T06:57:32.871362Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-07-22T06:57:32.973080Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("extensions/markdown-viewer/src/MarkdownViewerProvider.ts"), AnchoredSystemPathBuf("extensions/markdown-viewer/webview-ui/src/WebViewerKit.ts")}
+2025-07-22T06:57:32.973090Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-07-22T07:17:11.471301Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("extensions/markdown-viewer"), AnchoredSystemPathBuf("packages/templates/simple-react-extension")}
+2025-07-22T07:17:11.471650Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-07-22T07:17:56.571264Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/templates/simple-react/dist")}
+2025-07-22T07:17:56.571501Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@viewerkit/template-simple-react"), path: AnchoredSystemPathBuf("packages/templates/simple-react") }}))
+2025-07-22T07:17:57.074915Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/templates/simple-react/package.json"), AnchoredSystemPathBuf("packages/templates/simple-react/src/hooks/useAutosave.ts"), AnchoredSystemPathBuf("packages/templates/simple-react/src/hooks/useBridge.ts"), AnchoredSystemPathBuf("packages/templates/simple-react/tsconfig.json"), AnchoredSystemPathBuf("packages/templates/simple-react/src/hooks/useWatchedFile.ts"), AnchoredSystemPathBuf("packages/templates/simple-react/src/ui"), AnchoredSystemPathBuf("packages/templates/simple-react/src/ui/BasePanel.tsx"), AnchoredSystemPathBuf("packages/templates/simple-react"), AnchoredSystemPathBuf("packages/templates/simple-react/node_modules"), AnchoredSystemPathBuf("packages/templates/simple-react/src/index.ts"), AnchoredSystemPathBuf("packages/templates/simple-react/src/ui/Button.tsx"), AnchoredSystemPathBuf("packages/templates/simple-react/src/ui/index.ts"), AnchoredSystemPathBuf("packages/templates/simple-react/src/hooks/index.ts"), AnchoredSystemPathBuf("packages/templates/simple-react/src/hooks"), AnchoredSystemPathBuf("packages/templates/simple-react/tsup.config.ts"), AnchoredSystemPathBuf("packages/templates/simple-react/src/hooks/useTheme.ts"), AnchoredSystemPathBuf("packages/templates/simple-react/.turbo"), AnchoredSystemPathBuf("packages/templates/simple-react/src"), AnchoredSystemPathBuf("packages/templates/simple-react/src/ui/Toolbar.tsx")}
+2025-07-22T07:17:57.074935Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@viewerkit/template-simple-react"), path: AnchoredSystemPathBuf("packages/templates/simple-react") }}))
+2025-07-22T07:18:06.870363Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/templates/simple-react-extension/package.json")}
+2025-07-22T07:18:06.870397Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-07-22T07:18:14.870105Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/templates/simple-react-extension/package.json")}
+2025-07-22T07:18:14.870113Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-07-22T07:19:23.544776Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/templates/simple-react-extension/README.md")}
+2025-07-22T07:19:23.544804Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-07-22T07:19:50.345359Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("pnpm-workspace.yaml")}
+2025-07-22T07:19:50.345403Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-07-22T07:20:07.543471Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("pnpm-workspace.yaml")}
+2025-07-22T07:20:07.543484Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-07-22T07:27:05.642169Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("pnpm-workspace.yaml")}
+2025-07-22T07:27:05.642202Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-07-22T07:27:57.541588Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("extensions/README.md")}
+2025-07-22T07:27:57.541615Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-07-22T07:28:17.141045Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("README.md")}
+2025-07-22T07:28:17.141758Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-07-22T07:33:48.341183Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf(".turbo/cookies/6.cookie")}
+2025-07-22T07:33:48.341256Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-07-22T07:34:14.038391Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf(""), AnchoredSystemPathBuf("_tmp_77681_f26c014648238c56ce49ef16483555dc")}
+2025-07-22T07:34:14.038416Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-07-22T07:39:56.662010Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/templates/simple-react-extension/README.md")}
+2025-07-22T07:39:56.662332Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-07-22T07:40:05.059864Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/templates/simple-react-extension/README.md")}
+2025-07-22T07:40:05.059878Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))

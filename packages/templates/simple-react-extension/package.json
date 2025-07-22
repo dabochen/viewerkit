@@ -1,0 +1,61 @@
+{
+  "name": "@viewerkit/template-simple-react",
+  "displayName": "ViewerKit Simple React Template",
+  "description": "Official ViewerKit template - A complete VS Code extension with React webview for file viewing and editing. Clone and customize for your own file types.",
+  "version": "1.0.0",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "customEditors": [
+      {
+        "viewType": "viewerkit.markdownViewer",
+        "displayName": "ViewerKit Markdown Viewer",
+        "selector": [
+          {
+            "filenamePattern": "*.md"
+          },
+          {
+            "filenamePattern": "*.markdown"
+          }
+        ],
+        "priority": "option"
+      }
+    ],
+    "commands": [
+      {
+        "command": "viewerkit.markdownViewer.openWith",
+        "title": "Open with ViewerKit Markdown Viewer"
+      }
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "command": "viewerkit.markdownViewer.openWith",
+          "when": "resourceExtname == .md || resourceExtname == .markdown",
+          "group": "navigation"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.85.0",
+    "@types/node": "20.x",
+    "typescript": "^5.3.0"
+  },
+  "dependencies": {
+    "@viewerkit/sdk": "file:../../packages/sdk",
+    "@viewerkit/template-simple-react": "file:../../packages/templates/simple-react",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  }
+}
