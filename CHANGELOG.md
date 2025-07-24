@@ -1,45 +1,20 @@
 # Changelog
 
-All notable changes to ViewerKit will be documented in this file.
+All notable changes to ViewerKit will be documented here.
 
-The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
-and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
-
-## [1.0.1] - 2025-01-16
+## [Unreleased] - 2025-07-24
 
 ### Added
-- Kiro IDE compatibility support (AWS agentic AI IDE)
-- Enhanced editor detection for Code OSS-based editors
-- Improved webview CSP configuration for better cross-editor compatibility
-- React 19 compatibility support
-- Updated peer dependencies to support both React 18 and 19
-
-### Fixed
-- Regex syntax error in hot reload pattern matching that caused issues in some webview environments
-- Enhanced error handling in file pattern matching
-- TypeScript compatibility issues with React 19's stricter type system in ButtonGroup component
-
-
-## [1.0.0] - 2025-07-15
-
-### Added
-- Initial release of ViewerKit SDK
-- Universal File Operations API with cross-platform support
-- Hot Reload system with 100ms debounce
-- Smart Autosave with backup creation
-- Theme synchronization using CSS variables
-- React hooks for file operations and state management
-- TypeScript declarations and JSDoc documentation
-- Full ESM and CommonJS support
-- Comprehensive test coverage
-- MIT License
+- Created a reusable PRD template for extension development (`extension-prd-template.md`)
+- Added documentation for building custom extensions with the template
+- Updated project structure to include template and supporting files
+- Added `.vscodeignore` for template extension packaging
+- Improved README and launch configuration for template usage
 
 ### Changed
-- Migrated from direct VS Code API calls to universal fileOps
-- Improved architectural consistency across all features
+- Removed outdated changelog entries for clarity
 
-### Developer Experience
-- Complete TypeScript type definitions
-- Extensive JSDoc comments for better IDE integration
-- Example code in documentation
+---
+
+*This changelog was reset to reflect the new template-driven workflow and documentation improvements. For previous release history, see earlier repository versions.*
 - Source maps for debugging 
