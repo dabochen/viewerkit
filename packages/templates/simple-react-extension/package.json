@@ -75,7 +75,6 @@
     "typescript": "^5.3.0"
   },
   "dependencies": {
-    "viewerkit-core": "file:../../viewerkit-core",
     "react": "^18.0.0",
     "react-dom": "^18.0.0"
   }

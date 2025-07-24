@@ -1,7 +1,7 @@
 # ViewerKit .gitignore
 
 # Exclude csv-viewer-extension (has its own git repo)
-extensions/csv-viewer-extension/
+extensions/
 
 # Dependencies
 node_modules/
