@@ -1,0 +1,31 @@
+# Source files
+src/**/*.ts
+webview-ui/src/**/*
+webview-ui/node_modules/**/*
+webview-ui/package-lock.json
+webview-ui/tsconfig.json
+webview-ui/webpack.config.js
+
+# Development files
+.vscode/**
+.vscode-test/**
+node_modules/**
+*.map
+tsconfig.json
+
+# Documentation and development files
+*.md
+!README.md
+
+# Git files
+.git/**
+.gitignore
+
+# Build artifacts (keep only what's needed)
+out/**/*.map
+
+# Keep only essential files:
+# - package.json
+# - README.md
+# - out/*.js (compiled extension)
+# - webview-ui/build/* (compiled webview)

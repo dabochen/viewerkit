@@ -1,5 +1,8 @@
 # ViewerKit .gitignore
 
+# Exclude csv-viewer-extension (has its own git repo)
+extensions/csv-viewer-extension/
+
 # Dependencies
 node_modules/
 npm-debug.log*

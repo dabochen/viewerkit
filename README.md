@@ -10,7 +10,7 @@ ViewerKit is a robust VS Code extension toolkit crafted to enable developers to 
 - **🎯 Focus on Your UX**: Core file operations and state management handled for you  
 - **🔥 Advanced Features**: Autosave, hot reload, conflict resolution, cursor preservation
 - **🎨 Theme Integration**: Automatic VS Code theme synchronization
-- **📱 Universal Compatibility**: Works across VS Code, Cursor, Windsurf, and other VS code based editors
+- **📱 Universal Compatibility**: Works across VS Code, Cursor, Windsurf, and other VS Code based editors
 - **🛡️ TypeScript First**: Full type safety throughout
 
 ## 🏗️ **Project Structure**
