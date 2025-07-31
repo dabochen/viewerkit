@@ -14,6 +14,34 @@
       "skipFiles": [
         "<node_internals>/**"
       ]
+    },
+    {
+      "name": "Launch CSV Viewer Extension",
+      "type": "extensionHost",
+      "request": "launch",
+      "args": [
+        "--extensionDevelopmentPath=${workspaceFolder}/extensions/csv-viewer-extension"
+      ],
+      "outFiles": [
+        "${workspaceFolder}/extensions/csv-viewer-extension/out/**/*.js"
+      ],
+      "skipFiles": [
+        "<node_internals>/**"
+      ]
+    },
+    {
+      "name": "Launch Slide Maker Extension",
+      "type": "extensionHost",
+      "request": "launch",
+      "args": [
+        "--extensionDevelopmentPath=${workspaceFolder}/extensions/slide-maker"
+      ],
+      "outFiles": [
+        "${workspaceFolder}/extensions/slide-maker/out/**/*.js"
+      ],
+      "skipFiles": [
+        "<node_internals>/**"
+      ]
     }
   ]
 }
